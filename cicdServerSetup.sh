@@ -12,7 +12,7 @@ curl https://gist.githubusercontent.com/Notso/72407b8c7a56fd2043d3dad61f95055c/r
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash >> .git_completion
 curl https://gist.githubusercontent.com/Notso/92c6fe5d1504b025782a46a3fdf8971c/raw/926730ccc06965c0245cb8028e58270a14d08de4/.bash_profile >> .bash_profile
 cp .profile .profile_orig
-curl https://gist.githubusercontent.com/Notso/92c6fe5d1504b025782a46a3fdf8971c/raw/926730ccc06965c0245cb8028e58270a14d08de4/.bash_profile >> .profile
+curl https://gist.githubusercontent.com/Notso/92c6fe5d1504b025782a46a3fdf8971c/raw/0420c8856f7ff2463037cc2c8ae20687e1dcbb61/.bash_profile >> .profile
 
 # add minikube
 curl -o Downloads/minikube_latest_amd64.deb -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
