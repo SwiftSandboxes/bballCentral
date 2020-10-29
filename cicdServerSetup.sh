@@ -29,6 +29,12 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 
+# update docker to run without sudo (this enables minikube to use it)
+sudo groupadd docker
+sudo usermod -aG docker $USER
+# make group changes take effect without restart
+newgrp docker
+
 # add minikube
 curl -o Downloads/minikube_latest_amd64.deb -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
 # note that the below command may prompt for root user password
