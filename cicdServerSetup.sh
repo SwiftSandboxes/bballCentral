@@ -39,3 +39,17 @@ newgrp docker
 curl -o Downloads/minikube_latest_amd64.deb -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
 # note that the below command may prompt for root user password
 sudo dpkg -i Downloads/minikube_latest_amd64.deb
+
+# at this point you may want to manually ensure minikube and its dashboard work by running 'minikube start' and 'minikube dashboard'
+
+# install helm. Note that steps on https://helm.sh/docs/intro/install/ include installing apt-transport https, which this script has already done
+curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
+echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+sudo apt-get update
+sudo apt-get install helm
+
+# install jenkins on k8s via helm
+helm repo add jenkins https://charts.jenkins.io
+helm repo update
+helm install bball-cicd-server jenkins/jenkins
+# Note that there is important info spit out after the jenkins install including how to get admin pass, Jenkins URL, and how to log in
