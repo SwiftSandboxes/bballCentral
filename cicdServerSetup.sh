@@ -42,6 +42,13 @@ sudo dpkg -i Downloads/minikube_latest_amd64.deb
 
 # at this point you may want to manually ensure minikube and its dashboard work by running 'minikube start' and 'minikube dashboard'
 
+# install kubectl. See https://helm.sh/docs/intro/install/. These steps are copied from there.
+sudo apt-get update && sudo apt-get install -y apt-transport-https gnupg2 curl
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update
+sudo apt-get install -y kubectl
+
 # install helm. Note that steps on https://helm.sh/docs/intro/install/ include installing apt-transport https, which this script has already done
 curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
 echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
